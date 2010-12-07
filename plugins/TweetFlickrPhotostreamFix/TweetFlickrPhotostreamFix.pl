@@ -274,7 +274,6 @@ sub consumer_secret {
 
 sub update_twitter {
 	my ( $plugin, $msg, $blog_id ) = @_;
-	$msg = decode_utf8( $msg );
 	require Net::OAuth::Simple;
 	my %tokens  = (
 		'access_token' => $plugin->access_token( $blog_id ),
@@ -293,6 +292,7 @@ sub update_twitter {
 	);
 	return $plugin->trans_error( "Authorize error" ) unless $nos->authorized;
 	my $url  = "http://api.twitter.com/1/statuses/update.xml";
+	$msg = decode_utf8( $msg );
 	my %params = ( 'status' => $msg );
 	my $response;
 	eval { $response = $nos->make_restricted_request( $url, 'POST', %params ); };
