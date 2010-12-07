@@ -1,0 +1,35 @@
+<style type="text/css">
+    .mediumHeader {
+        border-bottom: 1px solid #cddee7;
+        padding-bottom: 3px;
+        margin-bottom: 25px;
+    }
+    .subHeader {
+        border-bottom: 1px dotted #cddee7;
+        padding-bottom: 3px;
+        margin-bottom: 25px;
+    }
+</style>
+<h3 class="mediumHeader"><__trans phrase="Settings for Twitter"></h3>
+<mtapp:setting
+    id="tweetyoutubeuploadstream_oauth"
+    label="<__trans phrase="Authentication">">
+    <a href="<mt:var name="script_url">?__mode=tweetfpsfix_oauth&amp;blog_id=<mt:var name="blog_id">" class="mt-open-dialog"><__trans phrase="OAuth authentication"></a>
+</mtapp:setting>
+<mtapp:setting
+    id="tweet_format"
+    label="<__trans phrase="Tweet format">">
+    <input type="text" class="text" name="tweet_format" value="<mt:var name="tweet_format">" />
+</mtapp:setting>
+<h3 class="mediumHeader"><__trans phrase="Settings for Flickr"></h3>
+<mtapp:setting
+    id="flickr_id"
+    label="<__trans phrase="Flickr ID">">
+    <input type="text" class="text" name="flickr_id" value="<mt:var name="flickr_id">" />
+</mtapp:setting>
+<input type="hidden" name="tweet_last_time" value="<mt:var name="tweet_last_time" escape="html">">
+<input type="hidden" name="last_tweeted" value="<mt:var name="last_tweeted" escape="html">">
+<input type="hidden" name="last_modified" value="<mt:var name="last_modified" escape="html">">
+<input type="hidden" name="access_token" value="<mt:var name="access_token" escape="html">">
+<input type="hidden" name="access_token_secret" value="<mt:var name="access_token_secret" escape="html">">
+
