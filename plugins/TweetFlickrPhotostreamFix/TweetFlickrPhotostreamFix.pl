@@ -274,6 +274,7 @@ sub consumer_secret {
 
 sub update_twitter {
 	my ( $plugin, $msg, $blog_id ) = @_;
+	$msg = decode_utf8( $msg );
 	require Net::OAuth::Simple;
 	my %tokens  = (
 		'access_token' => $plugin->access_token( $blog_id ),
